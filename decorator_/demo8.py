@@ -9,7 +9,7 @@ class DelayFunc:
         self.func = func
 
     def __call__(self, *args, **kwargs):
-        print(f'Wait for {self.duration} seconds...')
+        print('Wait for {self.duration} seconds...')
         time.sleep(self.duration)
         return self.func(*args, **kwargs)
 
