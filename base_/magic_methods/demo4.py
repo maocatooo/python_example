@@ -55,3 +55,4 @@ class A():
 t = TestProperty()
 a = type(t)(lambda x: x + 1, None, None, None)
 print(a.fget(1))
+print(type(t) == TestProperty)
