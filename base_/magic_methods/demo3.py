@@ -10,6 +10,7 @@ class RevealAccess(object):
 
     def __get__(self, obj, objtype):
         print ('Retrieving', self.name)
+        print(objtype)
         return self.val
 
     def __set__(self, obj, val):
@@ -17,10 +18,8 @@ class RevealAccess(object):
         self.val = val
 
 
-
 class MyClass(object):
     x = RevealAccess(10, 'var "x"')
     y = 5
 
-print (MyClass.x)
-print(type(MyClass)(MyClass))
+MyClass().x=20

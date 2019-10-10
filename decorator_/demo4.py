@@ -11,7 +11,7 @@ def say_hello(contry):
 
             # 真正执行函数的地方
             func(*args, **kwargs)
-        return deco
+        return deco(args, kwargs)()
     return wrapper
 
 
