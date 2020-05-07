@@ -20,6 +20,7 @@ print(np.cumsum(arr))
 print(np.diff(arr))
 
 print(arr)
+# 输出非0的数返回[true,false]
 print(np.nonzero(arr))
 
 arr1 = np.arange(10, 1, -1).reshape((3, 3))
@@ -29,5 +30,8 @@ print(np.sort(arr1))
 # 矩阵转置
 arr2 = np.arange(10, 0, -1).reshape((2, 5))
 print(np.transpose(arr2))
+print(arr2.T)
 print(arr2.T.dot(arr2))
 
+# 小于3的变为3， 大于5的变为5
+print(np.clip(arr2, 3, 5))

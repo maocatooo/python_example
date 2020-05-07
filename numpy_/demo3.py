@@ -16,7 +16,7 @@ print(np.tan(arr))
 
 print(arr < 2)
 print(arr == 2)
-
+# 矩阵乘法
 print(np.dot(arr, arr1))
 
 arr2 = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
