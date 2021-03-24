@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>var socket;
+    var host = `ws://${"127.0.0.1"}:${21564}/`;
+    var is_support = ("WebSocket" in window);
+    if (is_support) {
+        // 打开一个 web socket
+        var ws = new WebSocket(host);
+        //  Web Socket 已连接上
+        ws.onopen = function () {
+            // 使用 send() 方法向服务器发送数据
+            ws.send(数据);
+            console.log("数据发送中...");
+        };
+        //  接受服务器数据
+        ws.onmessage = function (e) {
+            var received_msg = e.data;
+            console.log("数据已接收...");
+        };
+        //  连接关闭
+        ws.onclose = function () {
+            // 关闭 websocket
+            console.log("连接已关闭...");
+        };
+    } else {
+        // 浏览器不支持 WebSocket
+        alert("您的浏览器不支持 WebSocket!");
+    }</script>
+</head>
+
+<body>
+
+</body>
+</html>

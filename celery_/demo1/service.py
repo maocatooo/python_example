@@ -6,7 +6,15 @@ app = Celery('service', backend='redis://0.0.0.0:6379/0',
 
 @app.task  # 普通函数装饰为 celery task
 def add(x, y):
-    time.sleep(2)
+    time.sleep(3)
     return x + y
 
 
+if __name__ == "__main__":
+    from celery.bin import worker
+    worker = worker.worker(app=app)
+    options = {
+        'loglevel': 'INFO',
+        'traceback': True
+    }
+    worker.run(**options)
